@@ -1,0 +1,31 @@
+body {
+	color: #d9edf7;
+	text-align: center;
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+	height: 100%;
+	/*background-color: #79a9c6;*/
+	font-family: sans-serif;
+	/*background-opacity: .5;*/
+}
+
+#anger {
+	color: #892525;
+
+}
+
+.smaller {
+	background-color: #ecf0f1;
+}
+
+#first-button {
+	box-shadow: #B4B5B5 5px 5px 5px;
+	color: #c17676;
+}
+
+.cover-heading {
+	color: #a1f4f3;
+}
+
+.inner {
+	background-color: #79a9c6;
+}
