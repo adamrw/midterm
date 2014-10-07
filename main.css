@@ -3,6 +3,7 @@ body {
 	text-align: center;
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 	height: 100%;
+	background: url(souldout.gif);
 	/*background-color: #79a9c6;*/
 	font-family: sans-serif;
 	/*background-opacity: .5;*/
