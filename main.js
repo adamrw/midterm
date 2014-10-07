@@ -6,7 +6,7 @@ $(document).on('ready', function() {
     $(this).after(input);
     input.height($(this).height());
     $(this).hide();
-
+});
  //    var companyList = {
 	// 	companies: {
 	// 		company1: 'First Company',
@@ -31,6 +31,10 @@ $(document).on('ready', function() {
 	// Company.prototype.render = function() {
 	// if(this.element) return this.element;
 	// };
+
+
+
+
 	var Company = function (name, owners, associates){
 		this.name = name;
 		this.owners = owners;
@@ -44,15 +48,15 @@ $(document).on('ready', function() {
 	var dog = new Company('Dog Foodz', ['Stephanie'], [puri, wall]);
 	var sand = new Company('Quiznos', ['Meghan'], [chip, pepsi, puri]);
 
+	var Companies=[wall, puri, chip, pepsi, pizz, dog, sand];
 	var callOut = function (){
-		for (var i = 0; i < company.length; i++) {
+		for (var i = 0; i < Companies.length; i++) {
 		
-		if(this.Company[i].name === name){
-			foundCompany = this.Company.splice(i, 1);
+		if(Company[i].name === name){
+			foundCompany = Company.splice(i, 1);
 			counsle.log(name);
 		return Company;
-		};
-	};
-
+		}
+	}
 };
 });
