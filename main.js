@@ -24,14 +24,35 @@ $(document).on('ready', function() {
 	// 		associate3: "Third Owner's Associate"
 	// 		}
 	// };
-	var wall=newCompany('Wall Mart', []);
-	var puri=newCompany('Purina', []);
-	var chip=newCompany('Chipotle', []);
-	var pepsi=newCompany('Pepsi', []);
-	var pizz=newCompany('Pizzaria Locale', ['Chipotle']);
-	var dog=newCompany('Dog Foodz', ['Purina', 'Wall Mart']);
-	var sand=newCompany('Quiznos', ['Chipotle', 'Pepsi', 'Purina']);
 
-	
-});
+	// var Company = function(name){
+	// this.name = name;
+	// };
+	// Company.prototype.render = function() {
+	// if(this.element) return this.element;
+	// };
+	var Company = function (name, owners, associates){
+		this.name = name;
+		this.owners = owners;
+		this.associates = associates;
+	};
+	var wall = new Company('Wall Mart', ['Bob'], []);
+	var puri = new Company('Purina', ['Joe'], []);
+	var chip = new Company('Chipotle', ['Gina'], []);
+	var pepsi = new Company('Pepsi', ['John'], []);
+	var pizz = new Company('Pizzaria Locale', ['Pete'], [chip]);
+	var dog = new Company('Dog Foodz', ['Stephanie'], [puri, wall]);
+	var sand = new Company('Quiznos', ['Meghan'], [chip, pepsi, puri]);
+
+	var callOut = function (){
+		for (var i = 0; i < company.length; i++) {
+		
+		if(this.Company[i].name === name){
+			foundCompany = this.Company.splice(i, 1);
+			counsle.log(name);
+		return Company;
+		};
+	};
+
+};
 });
