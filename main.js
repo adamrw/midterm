@@ -51,12 +51,16 @@ $(document).on('ready', function() {
 	var Companies=[wall, puri, chip, pepsi, pizz, dog, sand];
 	var callOut = function (){
 		for (var i = 0; i < Companies.length; i++) {
+			// console.log(Companies[i].associates);
+		console.log(Companies[i].name + ' ' + Companies[i].owners + ' ' + Companies[i].associates);
+		if(Companies[i].name === 'edit-input'){
+			alert(Companies[i].name + ' is owned by ' + Companies[i].owners + ' and is associated with ' + Companies[i].associates);
+			// foundCompany = Companies.splice(i, 1);
 		
-		if(Company[i].name === name){
-			foundCompany = Company.splice(i, 1);
-			counsle.log(name);
-		return Company;
+		// return Companies;
 		}
 	}
 };
+callOut();
 });
+
