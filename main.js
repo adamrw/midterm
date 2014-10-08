@@ -34,10 +34,10 @@ $(document).on('ready', function() {
 	var puri = new Company('Purina', ['Joe'], []);
 	var chip = new Company('Chipotle', ['Gina'], []);
 	var pepsi = new Company('Pepsi', ['John'], []);
-	var pizz = new Company('Pizzaria Locale', ['Pete'], [chip]);
-	var dog = new Company('Dog Foodz', ['Stephanie'], [puri, wall]);
-	var sand = new Company('Quiznos', ['Meghan'], [chip, pepsi, puri]);
-
+	var pizz = new Company('Pizzaria Locale', ['Pete'], [chip.name]);
+	var dog = new Company('Dog Foodz', ['Stephanie'], [puri.name, wall.name]);
+	var sand = new Company('Quiznos', ['Meghan'], [chip.name, pepsi.name, puri.name]);
+console.log(chip);
 	var companies=[wall, puri, chip, pepsi, pizz, dog, sand];
 	// var callOut = function (){
 		
