@@ -23,6 +23,16 @@ body {
 	/*color: #c17676;*/
 }
 
+#second-button {
+	box-shadow: #B4B5B5 5px 5px 5px;
+	/*color: #c17676;*/
+}
+
+#third-button {
+	box-shadow: #B4B5B5 5px 5px 5px;
+	/*color: #c17676;*/
+}
+
 .cover-heading {
 	color: #a1f4f3;
 }

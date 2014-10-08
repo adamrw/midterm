@@ -24,8 +24,20 @@ $(document).on('ready', function() {
    		}
    	});
 
+	// $('#addCompany').on('submit', function() {
+	// 	name.push();
+	// });
+	// $('#addOwner').on('submit', function() {
+	// 	owners.push();
+	// });
+	// $('#addAssociates').on('submit', function() {
+	// 	associates.push();
+	// });
+	// }
+
 
 	var Company = function (name, owners, associates){
+		console.log(Company);
 		this.name = name;
 		this.owners = owners;
 		this.associates = associates;
@@ -34,10 +46,10 @@ $(document).on('ready', function() {
 	var puri = new Company('Purina', ['Joe'], []);
 	var chip = new Company('Chipotle', ['Gina'], []);
 	var pepsi = new Company('Pepsi', ['John'], []);
-	var pizz = new Company('Pizzaria Locale', ['Pete'], [chip.name]);
+	var pizz = new Company('Pizzeria Locale', ['Pete'], [chip.name]);
 	var dog = new Company('Dog Foodz', ['Stephanie'], [puri.name, wall.name]);
 	var sand = new Company('Quiznos', ['Meghan'], [chip.name, pepsi.name, puri.name]);
-console.log(chip);
+		console.log(chip);
 	var companies=[wall, puri, chip, pepsi, pizz, dog, sand];
 	// var callOut = function (){
 		
