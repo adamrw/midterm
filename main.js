@@ -1,38 +1,25 @@
 $(document).on('ready', function() {
   
    $('#first-button').on('click', function(){
-   	var originalField = $(this);
-   	var input = $('<textarea class="edit-input" />');
-    $(this).after(input);
-    input.height($(this).height());
-    $(this).hide();
-});
- //    var companyList = {
-	// 	companies: {
-	// 		company1: 'First Company',
-	// 		company2: 'Second Company',
-	// 		company3: 'Third Company'
-	// 	},
-	// 	owners: {
-	// 		name1: "First Company's Owner",
-	// 		name2: "Second Company's Owner",
-	// 		name3: "Third Company's Owner",
-	// 		},
-	// 	associates: {
-	// 		associate1: "First Owner's Associate",
-	// 		associate2: "Second Owner's Associate",
-	// 		associate3: "Third Owner's Associate"
-	// 		}
-	// };
+   		var getVal = $('#InputCompany').val();
+   		console.log('test', getVal);
 
-	// var Company = function(name){
-	// this.name = name;
-	// };
-	// Company.prototype.render = function() {
-	// if(this.element) return this.element;
-	// };
-
-
+   		for (var i = 0; i < companies.length; i++) {
+			// console.log(Companies[i].associates);
+		console.log(companies[i].name + ' ' + companies[i].owners + ' ' + companies[i].associates);
+		if(getVal === companies[i].name){
+			$('#posAlert').html('<div class="alert alert-success alert-dismissable" role="alert">' + companies[i].name + ' is owned by ' + companies[i].owners + ' and is associated with ' + companies[i].assiciates + '</div>');
+			alert(companies[i].name + ' is owned by ' + companies[i].owners + ' and is associated with ' + companies[i].associates);
+			// foundCompany = Companies.splice(i, 1);
+		
+		// return companies[i].associates;
+	   	 }
+   		else  {
+   			$('#negAlert').html('<div class="alert alert-danger alert-dismissable" role="alert">' + "I'm sorry, we didn't find any results for that company" + '</div>');
+   		}
+   		
+   	}
+   	});
 
 
 	var Company = function (name, owners, associates){
@@ -48,19 +35,12 @@ $(document).on('ready', function() {
 	var dog = new Company('Dog Foodz', ['Stephanie'], [puri, wall]);
 	var sand = new Company('Quiznos', ['Meghan'], [chip, pepsi, puri]);
 
-	var Companies=[wall, puri, chip, pepsi, pizz, dog, sand];
-	var callOut = function (){
-		for (var i = 0; i < Companies.length; i++) {
-			// console.log(Companies[i].associates);
-		console.log(Companies[i].name + ' ' + Companies[i].owners + ' ' + Companies[i].associates);
-		if(Companies[i].name === 'edit-input'){
-			alert(Companies[i].name + ' is owned by ' + Companies[i].owners + ' and is associated with ' + Companies[i].associates);
-			// foundCompany = Companies.splice(i, 1);
+	var companies=[wall, puri, chip, pepsi, pizz, dog, sand];
+	// var callOut = function (){
 		
-		// return Companies;
-		}
-	}
-};
-callOut();
+		// }
+	
+
+
 });
 
