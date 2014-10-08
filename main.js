@@ -1,14 +1,19 @@
 $(document).on('ready', function() {
   
-   $('#first-button').on('click', function(){
+   $('#firstForm').on('submit', function(e){
+   		e.preventDefault();
    		var getVal = $('#InputCompany').val();
    		console.log('test', getVal);
-
+   		var foundCompany=null;
    		for (var i = 0; i < companies.length; i++) {
-			// console.log(Companies[i].associates);
-		console.log(companies[i].name + ' ' + companies[i].owners + ' ' + companies[i].associates);
-		if(getVal === companies[i].name){
-			$('#posAlert').html('<div class="alert alert-success alert-dismissable" role="alert">' + companies[i].name + ' is owned by ' + companies[i].owners + ' and is associated with ' + companies[i].assiciates + '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
+   			if(getVal === companies[i].name){
+				// console.log(Companies[i].associates);
+				console.log(companies[i].name + ' ' + companies[i].owners + ' ' + companies[i].associates);
+				foundCompany=companies[i];
+			}
+   		}
+   		if(foundCompany !== null){
+			$('#posAlert').html('<div class="alert alert-success alert-dismissable" role="alert">' + foundCompany.name + ' is owned by ' + foundCompany.owners + ' and is associated with ' + foundCompany.associates + '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
 			// alert(companies[i].name + ' is owned by ' + companies[i].owners + ' and is associated with ' + companies[i].associates);
 			// foundCompany = Companies.splice(i, 1);
 		
@@ -17,8 +22,6 @@ $(document).on('ready', function() {
    		else  {
    			$('#negAlert').html('<div class="alert alert-danger alert-dismissable" role="alert">' + "I'm sorry, we didn't find any results for that company" + '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
    		}
-   		
-   	}
    	});
 
 
