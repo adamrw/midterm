@@ -6,31 +6,50 @@ $(document).on('ready', function() {
    		e.preventDefault();
    		$('#posAlert').find('.closealert').click();
    		$('#negAlert').find('.closealertneg').click();
-   		var getVal = $('#InputCompany').val();
-   		console.log('test', getVal);
+   		$('#assAlert').find('.closealertass').click();
+   		var getVal = $('#InputCompany').val().toLowerCase();
+   		// console.log('test', getVal);
    		var foundCompany=null;
-   		console.log(foundCompany);
+   		// console.log(foundCompany);
    		for (var i = 0; i < companies.length; i++) {
    			if(getVal === companies[i].name){
-				// console.log(Companies[i].associates);
+   				if(companies[i].associates.length === 0) {
+   					console.log("unknown company");
+	   				$('#assAlert').html('<div class="alert alert-info alert-dismissable" role="alert">' + companies[i].name + ' is owned by ' + companies[i].owners + ' but has no other associates. ' + '<button type="button" class="close" data-dismiss="alert"><span class="closealertass" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
+	   			}
+
+	   			else {
+	   				console.log("positive alert");
+	   				$('#posAlert').html('<div class="alert alert-success alert-dismissable" role="alert">' + companies[i].name + ' is owned by ' + companies[i].owners + ' and is associated with ' + companies[i].associates + '<button type="button" class="close" data-dismiss="alert"><span class="closealert" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
 				console.log(companies[i].name + ' ' + companies[i].owners + ' ' + companies[i].associates);
 				foundCompany=companies[i];
+				}
 			}
+			else {
+				console.log("neg alert");
+	   		}
+	   		
+	   		
+
+	   		// else if(foundCompany !== null){
+				// $('#posAlert').html('<div class="alert alert-success alert-dismissable" role="alert">' + foundCompany.name + ' is owned by ' + foundCompany.owners + ' and is associated with ' + foundCompany.associates + '<button type="button" class="close" data-dismiss="alert"><span class="closealert" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
+				// alert(companies[i].name + ' is owned by ' + companies[i].owners + ' and is associated with ' + companies[i].associates);
+				// foundCompany = Companies.splice(i, 1);
+			
+			// return companies[i].associates;
+		   	 // }
+
+		   	//  else if(foundCompany.associates.length === 0) {
+	   		// 	$('#assAlert').html('<div class="alert alert-info alert-dismissable" role="alert">' + foundCompany.name + ' is owned by ' + foundCompany.owners + ' but has no other associates. ' + '<button type="button" class="close" data-dismiss="alert"><span class="closealert" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
+	   		// }
    		}
+   		// if (getVal!==true) {continue};
+   		$('#negAlert').html('<div class="alert alert-danger alert-dismissable" role="alert">' + "I'm sorry, we didn't find any results for that company" + '<button type="button" class="close" data-dismiss="alert"><span class="closealertneg" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
+   			
+   	
 
 //If company is found, display an alert containing the owner, and associates
 //If company is not found, display a different alert telling user no data is found
-
-   		if(foundCompany !== null){
-			$('#posAlert').html('<div class="alert alert-success alert-dismissable" role="alert">' + foundCompany.name + ' is owned by ' + foundCompany.owners + ' and is associated with ' + foundCompany.associates + '<button type="button" class="close" data-dismiss="alert"><span class="closealert" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
-			// alert(companies[i].name + ' is owned by ' + companies[i].owners + ' and is associated with ' + companies[i].associates);
-			// foundCompany = Companies.splice(i, 1);
-		
-		// return companies[i].associates;
-	   	 }
-   		else  {
-   			$('#negAlert').html('<div class="alert alert-danger alert-dismissable" role="alert">' + "I'm sorry, we didn't find any results for that company" + '<button type="button" class="close" data-dismiss="alert"><span class="closealertneg" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
-   		}
    	});
 
 	
@@ -63,13 +82,13 @@ $(document).on('ready', function() {
 		
 		// }
 	
-var wall = new Company('Wall Mart', ['Bob'], []);
-	var puri = new Company('Purina', ['Joe'], []);
-	var chip = new Company('Chipotle', ['Gina'], []);
-	var pepsi = new Company('Pepsi', ['John'], []);
-	var pizz = new Company('Pizzeria Locale', ['Pete'], [chip.name]);
-	var dog = new Company('Dog Foodz', ['Stephanie'], [puri.name, wall.name]);
-	var sand = new Company('Quiznos', ['Meghan'], [chip.name, pepsi.name, puri.name]);
+var wall = new Company('wall mart', ['Bob'], []);
+	var puri = new Company('purina', ['Joe'], []);
+	var chip = new Company('chipotle', ['Gina'], []);
+	var pepsi = new Company('pepsi', ['John'], []);
+	var pizz = new Company('pizzeria Locale', ['Pete'], [chip.name]);
+	var dog = new Company('dog foodz', ['Stephanie'], [puri.name, wall.name]);
+	var sand = new Company('quiznos', ['Meghan'], [chip.name, pepsi.name, puri.name]);
 		// console.log(chip);
 	var companies=[wall, puri, chip, pepsi, pizz, dog, sand];
 });
