@@ -14,6 +14,7 @@ $(document).on('ready', function() {
    		for (var i = 0; i < companies.length; i++) {
    			if(getVal === companies[i].name){
    				if(companies[i].associates.length === 0) {
+   					foundCompany=true;
    					console.log("unknown company");
 	   				$('#assAlert').html('<div class="alert alert-info alert-dismissable" role="alert">' + companies[i].name + ' is owned by ' + companies[i].owners + ' but has no other associates. ' + '<button type="button" class="close" data-dismiss="alert"><span class="closealertass" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
 	   			}
@@ -44,8 +45,14 @@ $(document).on('ready', function() {
 	   		// }
    		}
    		// if (getVal!==true) {continue};
+   		if(!foundCompany){
    		$('#negAlert').html('<div class="alert alert-danger alert-dismissable" role="alert">' + "I'm sorry, we didn't find any results for that company" + '<button type="button" class="close" data-dismiss="alert"><span class="closealertneg" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
-   			
+   		$('#addCompany').html('<form class="form-group inline" id="addCompany" role="form">' + '<input type="company" class="form-control" id="new-company-info" placeholder="Would you like to enter a new company name?">' + '<button type="submit" class="btn btn-primary btn-lg" id="second-button">Submit</button>' + '</form>');
+              // <div class="form-group inline">
+              
+              
+              
+   		}		
    	
 
 //If company is found, display an alert containing the owner, and associates
