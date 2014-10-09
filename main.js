@@ -48,6 +48,7 @@ $(document).on('ready', function() {
    		if(!foundCompany){
    		$('#negAlert').html('<div class="alert alert-danger alert-dismissable" role="alert">' + "I'm sorry, we didn't find any results for that company" + '<button type="button" class="close" data-dismiss="alert"><span class="closealertneg" aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' + '</div>');
    		$('#addCompany').html('<form class="form-group inline" id="addCompany" role="form">' + '<input type="company" class="form-control" id="new-company-info" placeholder="Would you like to enter a new company name?">' + '<button type="submit" class="btn btn-primary btn-lg" id="second-button">Submit</button>' + '</form>');
+   		$('#addOwner').html('<form class="form-group inline" id="addOwner" role="form">' + '<input type="owner" class="form-control" id="new-owner-info" placeholder="Enter company owner">' + '<button type="submit" class="btn btn-primary btn-lg" id="third-button">Submit</button>' + '</form>');
               // <div class="form-group inline">
               
               
